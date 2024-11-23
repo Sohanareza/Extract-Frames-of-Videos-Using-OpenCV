@@ -1,13 +1,12 @@
-# Program To Read video 
-# and Extract Frames 
+# Program To Read video and Extract Frame
 
 import cv2 
 
 # Function to extract frames 
-def FrameCapture(path): 
+def frame_capture(path): 
 
 	# Path to video file 
-	vidObj = cv2.VideoCapture(path) 
+	vid_obj = cv2.VideoCapture(path) 
 
 	# Used as counter variable 
 	count = 0
@@ -17,9 +16,9 @@ def FrameCapture(path):
 
 	while success: 
 
-		# vidObj object calls read 
+		# vid_obj object calls read 
 		# function extract frames 
-		success, image = vidObj.read() 
+		success, image = vid_obj.read() 
 
 		# Saves the frames with frame-count 
 		cv2.imwrite("frame%d.jpg" % count, image) 
@@ -31,4 +30,4 @@ def FrameCapture(path):
 if __name__ == '__main__': 
 
 	# Calling the function 
-	FrameCapture("C:\\Users\\rubai\\Desktop\\OpenCV Learning\\Projects\\Extract Frames From Video\\Extract-Frames-of-Videos-Using-OpenCV\\Video.mp4") 
+	frame_capture("C:\\Users\\rubai\\Desktop\\OpenCV Learning\\Projects\\Extract Frames From Video\\Extract-Frames-of-Videos-Using-OpenCV\\Video.mp4") 
